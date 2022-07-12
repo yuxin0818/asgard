@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-theme = "dark">
   <head>
     
     <title>Home</title>
@@ -24,8 +24,12 @@
     </div>
     <div class = "upload">
       <table>
-        <th><input type="file" id="sumbittedFile" name="filename"></th>
-        <th><button id = "submit"> Submit </button></th>
+        <tr>
+            <td><input type="file" id="sumbittedFile" name="filename"></td>
+            <td><button id = "submit"> Submit </button></td>
+        </tr>
       </table>
+      <p id = "warning">Your file is being uploaded, please wait.</p>
+      <progress id = "progress-bar"></progress>
     </div>
 </body>
