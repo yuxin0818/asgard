@@ -7,6 +7,12 @@
 -   [Asgard](#asgard)
     -   [Table of Contents](#table-of-contents)
     -   [About](#about)
+    -   [Setup](#setup)
+    -   [Frontend](#frontend)
+    -   [Backend](#backend)
+    -   [Intra-Node Communication](#intra-node-communication)
+    -   [Architecture Diagrams](#architecture-diagrams)
+    -   [File Format Documentation](#file-format-documentation)
 
 ## About
 
