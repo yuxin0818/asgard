@@ -20,3 +20,17 @@ This repository contains all of the information regarding:
 -   Scripts to send files from the head node to a node
 -   Architecture diagrams to explain how this cluster is organized
 -   File format documentation to explain what is an isn't a valid file format
+
+## Setup
+
+See [JETSON_SETUP.md](JETSON_SETUP.md) for more information.
+
+## Frontend
+
+## Backend
+
+## Intra-Node Communication
+
+## Architecture Diagrams
+
+## File Format Documentation
