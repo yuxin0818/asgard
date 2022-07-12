@@ -1,18 +1,18 @@
 html,
 body {
-  max-width: 100%;
-  overflow-x: hidden;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
-  text-align: center;
+    text-align: center;
 }
 
 p {
-  font-size: large;
+    font-size: large;
 }
 
 .upload {
-  padding-left: 25%;
-  padding-right: 25%;
+    padding-left: 25%;
+    padding-right: 25%;
 }
