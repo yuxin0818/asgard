@@ -1,10 +1,15 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body{
     text-align : center;
 }
 
 p{
     font-size:large;
-} 
+}
 
 .upload{
     padding-left:25%;

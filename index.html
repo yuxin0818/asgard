@@ -1,37 +1,31 @@
 <!DOCTYPE html>
 <html data-theme = "dark">
-  <head>
+    <head>
+        <title>Asgard Cluster</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
 
-    <title>Asgard Cluster</title>
-    <meta charset="utf-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="script.js" defer></script>
+    </head>
 
-      <!-- link the webpage's stylesheet -->
-      <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
-
-      <!-- link the webpage's JavaScript file -->
-      <script src="script.js" defer></script>
-
-  </head>
-
-<body>
-    <div class = "intro">
-    <h1>Asgard Cluster File Upload System</h1>
-    <p>Upload and submit your file here!</p>
-    <hr>
-    </div>
-    <div class = "upload">
-        <figure>
-            <table>
-                <tr>
-                    <td><input type="file" id="sumbittedFile" name="filename"></td>
-                    <td><button id = "submit"> Submit </button></td>
-                </tr>
-            </table>
-        </figure>
-      <p id="warning" hidden>Your file is being uploaded, please wait.</p>
-      <progress label="loading" id="progress-bar" hidden></progress>
-    </div>
-</body>
+    <body>
+        <header>
+            <h1>Asgard Cluster File Upload System</h1>
+            <p>Upload and submit your file here!</p>
+            <hr>
+        </header>
+        <main>
+            <div id="gridRoot" class="grid">
+                <label for="fileUpload">
+                    Select File
+                    <input type="file" id="fileUpload" name="filename" required style="width: 1000px;">
+                </label>
+                <button type="submit" aria-busy="false">Submit</button>
+            </div>
+        </main>
+        <footer></footer>
+    </body>
+</html>

@@ -1,15 +1,12 @@
-//Get elements and establish variables
-bar = document.getElementById("progress-bar");
+bar = document.getElementById("progressBar");
 submit = document.getElementById("submit");
 warning = document.getElementById("warning");
 clicks = 0;
 
-//Hide text and add event listener
 warning.hidden = true;
 bar.hidden = true;
-submit.addEventListener("click",submitted);
+submit.addEventListener("click", submitted);
 
-//Runs if button is clicked:
 function submitted(){
     if (clicks >= 1){
         return;
