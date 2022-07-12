@@ -5,6 +5,7 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
         <link rel="stylesheet" href="style.css" />
         <link
             rel="stylesheet"
@@ -22,7 +23,9 @@
                     <button type="button" id="aboutButton">About</button>
                 </div>
                 <div>
-                    <button type="button" id="fileInformationButton">File Specification</button>
+                    <button type="button" id="fileInformationButton">
+                        File Specification
+                    </button>
                 </div>
             </div>
             <hr />
@@ -38,25 +41,33 @@
                         required
                     />
                 </label>
-                <button type="submit" aria-busy="false">Upload File</button>
+                <button type="submit" aria-busy="false" id="uploadButton">
+                    Upload File
+                </button>
             </div>
+            <p id="warningText" hidden>Hello World</p>
+            <progress id="progressBar" label="loading" hidden></progress>
             <hr />
         </main>
         <footer>
             <h5>Acknowledgments</h5>
-            <li>
-                <ul>
+            <ul>
+                <li>
                     Frontend designed by Anna Grigorescu and Nicholas Synovic
-                </ul>
-                <ul>
+                </li>
+                <li>
                     File format designed by Roshni Mathew and Nicholas Synovic
-                </ul>
-                <ul>
+                </li>
+                <li>
                     Cluster architecture designed by Rohan Sethi and Nicholas
                     Synovic
-                </ul>
-                <hr />
-            </li>
+                </li>
+                <li>
+                    <a href="https://www.flaticon.com/free-icons/thor" title="thor icons">Thor
+                        icons created by Smashicons - Flaticon</a>
+                </li>
+            </ul>
+            <hr />
         </footer>
     </body>
 </html>

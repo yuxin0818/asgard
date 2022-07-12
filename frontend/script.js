@@ -1,17 +1,20 @@
-bar = document.getElementById("progressBar");
-submit = document.getElementById("submit");
-warning = document.getElementById("warning");
-clicks = 0;
+"use strict";
 
-warning.hidden = true;
-bar.hidden = true;
-submit.addEventListener("click", submitted);
+var uploadButtonClicks = 0;
 
-function submitted() {
-    if (clicks >= 1) {
+const uploadButton = document.getElementById("uploadButton");
+const warningText = document.getElementById("warningText");
+const progressBar = document.getElementById("progressBar");
+const fileUploadElement = document.getElementById("fileUpload");
+
+uploadButton.addEventListener("click", uploadFile);
+
+function uploadFile() {
+    if (uploadButtonClicks >= 1) {
         return;
     }
-    clicks += 1;
-    warning.hidden = false;
-    bar.hidden = false;
+    uploadButtonClicks += 1;
+    warningText.textContent = "Uploading " + fileUploadElement.files[0].name;
+    warningText.hidden = false;
+    progressBar.hidden = false;
 }

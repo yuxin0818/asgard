@@ -9,12 +9,12 @@ p {
     font-size: large;
 }
 
-#aboutButton    {
+#aboutButton {
     --primary: #d81b60;
     --primary-hover: #e53935;
 }
 
-#fileInformationButton   {
+#fileInformationButton {
     --primary: #d81b60;
     --primary-hover: #e53935;
 }
