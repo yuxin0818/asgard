@@ -1,17 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+  <head>
+    
+    <title>Home</title>
+    <meta charset="utf-8" />
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation&display=swap" rel="stylesheet">
 
-<head>
-	<title>Clusters</title>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	  <!-- link the webpage's stylesheet -->
+	  <link rel="stylesheet" href="/style.css" />
 
-	<!-- import the webpage's stylesheet -->
-	<link rel="stylesheet" href="/style.css">
+	  <!-- link the webpage's JavaScript file -->
+	  <script src="/script.js" defer></script>
 
-	<!-- import the webpage's javascript file -->
-	<script src="/script.js" defer>
+  </head>
 
-	</script>
-</head>
+<body>
+    <div class = "intro">
+    <h1>Cluster File Upload</h1>
+    <p> Upload and submit your file here! </p>
+    <hr>
+    </div>
+    <div class = "upload">
+    <input type="file" id="sumbittedFile" name="filename">
+    <button id = "submit"> Submit </button>
+    </div>
+</body>
