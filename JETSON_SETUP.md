@@ -4,14 +4,14 @@
 
 ## Table of Contents
 
--   [Jetson Nano Setup Documentation](#jetson-nano-setup-documentation)
-    -   [Table of Contents](#table-of-contents)
-    -   [NVIDIA Jetson Nano 2GB Setup](#nvidia-jetson-nano-2gb-setup)
-        -   [Requirements](#requirements)
-        -   [Setup the Softwware](#setup-the-softwware)
-        -   [Setup the Device](#setup-the-device)
-        -   [Flash the Device](#flash-the-device)
-        -   [Tips](#tips)
+- [Jetson Nano Setup Documentation](#jetson-nano-setup-documentation)
+  - [Table of Contents](#table-of-contents)
+  - [NVIDIA Jetson Nano 2GB Setup](#nvidia-jetson-nano-2gb-setup)
+    - [Requirements](#requirements)
+    - [Setup the Software](#setup-the-software)
+    - [Setup the Device](#setup-the-device)
+    - [Flash the Device](#flash-the-device)
+    - [Tips](#tips)
 
 ## NVIDIA Jetson Nano 2GB Setup
 
@@ -25,7 +25,7 @@
 -   USB type C charger rated for 5V, 3A (five volts, three amps)
 -   Ethernet cable
 
-### Setup the Softwware
+### Setup the Software
 
 1. Download the
    [`NVIDIA SDK Manager`](https://developer.NVIDIA.com/NVIDIA-sdk-manager) tool
