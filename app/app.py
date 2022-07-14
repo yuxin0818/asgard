@@ -1,10 +1,10 @@
 import os
 from typing import Mapping
 
-from flask import Flask, render_template
+from flask import Flask, render_template, Response
 
 
-def create_app(test_config: Mapping = None):
+def createApp(test_config: Mapping = None):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
         SECRET_KEY="dev",
@@ -21,8 +21,21 @@ def create_app(test_config: Mapping = None):
     except OSError:
         pass
 
-    @app.route("/")
+    @app.route("/submit")
     def hello():
+        return Response("hello", mimetype="text/plain")
+
+    @app.route("/cwd")
+    def test():
+        return Response(os.getcwd(), mimetype="text/plain")
+
+    @app.route("/")
+    def root():
         return render_template("index.html")
 
+
     return app
+
+if __name__ == '__main__':
+    app = createApp()
+    app.run()
