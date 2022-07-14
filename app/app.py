@@ -7,6 +7,7 @@ from flask import Flask, render_template, Response
 def createApp():
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
+        # https://flask.palletsprojects.com/en/2.1.x/config/ for Configuration Options
         SECRET_KEY="dev",
         DATABASE=os.path.join(app.instance_path, "flaskr.sqlite"),
     )
