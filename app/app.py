@@ -2,6 +2,8 @@ import os
 from typing import Mapping
 
 from flask import Flask, render_template, Response
+from werkzeug.utils import secure_filename
+from werkzeug.datastructures import  FileStorage
 
 
 def createApp():
@@ -24,10 +26,16 @@ def createApp():
     def life():
         return Response("\n".join(os.listdir(".")), mimetype="text/plain")
 
-    @app.route("/")
-    def root():
-        return render_template("index.html")
-
+    @app.route('/')
+    def home():
+        return render_template('index.html')
+	
+    @app.route('/uploader', methods = ['GET', 'POST'])
+    def upload_file():
+        if request.method == 'POST':
+            f = request.files['file']
+            f.save(secure_filename(f.filename))
+            return 'file uploaded successfully'
 
     return app
 
