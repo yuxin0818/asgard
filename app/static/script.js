@@ -13,7 +13,7 @@ function uploadFile() {
     if (uploadButtonClicks >= 1) {
         return;
     }
-    if (fileUploadElement.files[0].name === undefined) {
+    if (fileUploadElement.files.length == 0) {
         warningText.textContent = "Please select a file to upload first.";
         warningText.hidden = false;
     }else{
