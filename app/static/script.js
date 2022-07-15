@@ -13,8 +13,14 @@ function uploadFile() {
     if (uploadButtonClicks >= 1) {
         return;
     }
-    uploadButtonClicks += 1;
-    warningText.textContent = "Uploading " + fileUploadElement.files[0].name;
-    warningText.hidden = false;
-    progressBar.hidden = false;
+    if (fileUploadElement.files[0].name === undefined) {
+        warningText.textContent = "Please select a file to upload first.";
+        warningText.hidden = false;
+    }else{
+        warningText.textContent = "Uploading " + fileUploadElement.files[0].name;
+        warningText.hidden = false;
+        progressBar.hidden = false;
+        uploadButtonClicks += 1;
+
+    }
 }
