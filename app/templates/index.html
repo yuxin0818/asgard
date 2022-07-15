@@ -32,23 +32,22 @@
             <hr />
         </header>
         <main>
-            <div class="grid">
+            <form action = "http://localhost:5000/uploader" method = "POST" 
+         enctype = "multipart/form-data">
                 <label for="fileUpload">
                     Select File
                     <input
                         type="file"
                         id="fileUpload"
                         name="filename"
-                        required
-                    />
+                        required/>
                 </label>
                 <button type="submit" aria-busy="false" id="uploadButton">
                     Upload File
                 </button>
-            </div>
-            <p id="warningText" hidden>Hello World</p>
-            <progress id="progressBar" label="loading" hidden></progress>
-            <hr />
+                <p id="warningText" hidden>Hello World</p>
+                <progress id="progressBar" label="loading" hidden></progress>
+            </form>
         </main>
         <footer>
             <h5>Acknowledgments</h5>
