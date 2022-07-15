@@ -32,7 +32,7 @@
             <hr />
         </header>
         <main>
-            <form action = "http://localhost:5000/uploader" method = "POST" 
+            <form method = "POST" 
          enctype = "multipart/form-data">
                 <label for="fileUpload">
                     Select File
@@ -45,9 +45,9 @@
                 <button type="submit" aria-busy="false" id="uploadButton">
                     Upload File
                 </button>
-                <p id="warningText" hidden>Hello World</p>
-                <progress id="progressBar" label="loading" hidden></progress>
             </form>
+            <p id="warningText" hidden>Hello World</p>
+            <progress id="progressBar" label="loading" hidden></progress>
         </main>
         <footer>
             <h5>Acknowledgments</h5>
