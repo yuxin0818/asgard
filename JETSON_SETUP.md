@@ -4,14 +4,14 @@
 
 ## Table of Contents
 
-- [Jetson Nano Setup Documentation](#jetson-nano-setup-documentation)
-  - [Table of Contents](#table-of-contents)
-  - [NVIDIA Jetson Nano 2GB Setup](#nvidia-jetson-nano-2gb-setup)
-    - [Requirements](#requirements)
-    - [Setup the Software](#setup-the-software)
-    - [Setup the Device](#setup-the-device)
-    - [Flash the Device](#flash-the-device)
-    - [Tips](#tips)
+-   [Jetson Nano Setup Documentation](#jetson-nano-setup-documentation)
+    -   [Table of Contents](#table-of-contents)
+    -   [NVIDIA Jetson Nano 2GB Setup](#nvidia-jetson-nano-2gb-setup)
+        -   [Requirements](#requirements)
+        -   [Setup the Software](#setup-the-software)
+        -   [Setup the Device](#setup-the-device)
+        -   [Flash the Device](#flash-the-device)
+        -   [Tips](#tips)
 
 ## NVIDIA Jetson Nano 2GB Setup
 
