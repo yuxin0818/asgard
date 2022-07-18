@@ -12,7 +12,6 @@
     -   [Backend](#backend)
     -   [Intra-Node Communication](#intra-node-communication)
     -   [Architecture Diagrams](#architecture-diagrams)
-    -   [File Format Documentation](#file-format-documentation)
 
 ## About
 
@@ -33,7 +32,7 @@ See [JETSON_SETUP.md](JETSON_SETUP.md) for more information.
 
 ## Frontend
 
-Frontend code can be found [here](frontend/).
+Frontend code can be found [here](app/).
 
 The frontend website is written in a single HTML, CSS, and JS file.
 It uses [Pico.css](https://picocss.com/) as its CSS framework to simplify development.
@@ -42,14 +41,8 @@ It uses [Pico.css](https://picocss.com/) as its CSS framework to simplify develo
 
 The server backend for the website is handled via [Flask](https://flask.palletsprojects.com/en/2.1.x/) and Python 3.10+.
 
-Backend code can be found [here](backend/).
+Backend code can be found [here](app/server.py).
 
 ## Intra-Node Communication
 
 ## Architecture Diagrams
-
-## File Format Documentation
-
-The cluster executes programs that are encapsulated within a `.img` file containing a Debian environment.
-
-For further information and how to get started , see [FILE_FORMAT.md](FILE_FORMAT.md).
