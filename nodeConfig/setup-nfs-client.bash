@@ -1,9 +1,24 @@
 #!/bin/bash
 
-# Tutorial followed
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install nfs-common
-sudo rm -r /mnt/documents_node1
-sudo mkdir -p /mnt/documents_node1
-sudo mount 10.22.75.78:/mnt/documents /mnt/documents_node1
+# Tutorials followed
+# https://phoenixnap.com/kb/ubuntu-nfs-server
+
+# Variables
+serverIP=""
+serverFolderPath="/mnt/asgard"
+clientFolderPath="/mnt/asgard_client"
+
+# Update, Upgrade, and Autoremove
+sudo apt update
+sudo apt upgrade -y
+sudo apt autoremove --purge -y
+
+# Install software
+sudo apt install nfs-common
+
+# Setup mount point
+sudo rm -r $clientFolderPath
+sudo mkdir $clientFolderPath
+
+# Connect to NFS server at mount point
+sudo mount $serverIP:$serverFolderPath $clientFolderPath 
