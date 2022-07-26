@@ -35,7 +35,7 @@ def createApp():
             if file:
                 filename = secure_filename(file.filename)
                 file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-                return redirect(url_for('upload_file', name=filename))
+                return redirect(url_for('upload_file'))
         return render_template("index.html")
 
     @app.route("/upload", methods=["GET", "POST"])
@@ -44,10 +44,12 @@ def createApp():
             f = request.files["file"]
             f.save(secure_filename(f.filename))
             return "File uploaded successfully"
+        return render_template("index.html")
 
     return app
 
 
 if __name__ == "__main__":
     app = createApp()
+    app.debug = True
     app.run()
