@@ -18,18 +18,6 @@ def createApp():
         DATABASE=os.path.join(app.instance_path, "flaskr.sqlite"),
     )
 
-    @app.route("/submit")
-    def hello():
-        return Response("hello", mimetype="text/plain")
-
-    @app.route("/cwd")
-    def cwd():
-        return Response(os.getcwd(), mimetype="text/plain")
-
-    @app.route("/life")
-    def life():
-        return Response("\n".join(os.listdir(".")), mimetype="text/plain")
-
     @app.route("/", methods=["GET", "POST"])
     def home():
         if request.method == 'POST':
@@ -48,23 +36,14 @@ def createApp():
                 filename = secure_filename(file.filename)
                 file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
                 return redirect(url_for('upload_file', name=filename))
-        # return '''
-        # <!doctype html>
-        # <title>Upload new File</title>
-        # <h1>Upload new File</h1>
-        # <form method=post enctype=multipart/form-data>
-        # <input type=file name=file>
-        # <input type=submit value=Upload>
-        # </form>
-        # '''
         return render_template("index.html")
 
-    @app.route("/uploader", methods=["GET", "POST"])
+    @app.route("/upload", methods=["GET", "POST"])
     def upload_file():
         if request.method == "POST":
             f = request.files["file"]
             f.save(secure_filename(f.filename))
-            return "file uploaded successfully"
+            return "File uploaded successfully"
 
     return app
 
