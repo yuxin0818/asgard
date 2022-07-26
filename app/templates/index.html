@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+    <head>
+        <title>Asgard Cluster File Upload</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="../static/images/favicon.ico"
+        />
+        <link rel="stylesheet" href="../static/style.css" />
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"
+        />
+        <script src="../static/script.js" defer></script>
+    </head>
+
+    <body>
+        <header>
+            <img src="../static/images/thor.png" alt="Asgard" />
+            <h1>Asgard Cluster File Upload System</h1>
+            <p>Upload and submit your file here!</p>
+            <div class="grid">
+                <div>
+                    <button type="button" id="aboutButton">About</button>
+                </div>
+                <div>
+                    <button type="button" id="fileInformationButton">
+                        File Specification
+                    </button>
+                </div>
+            </div>
+            <hr />
+        </header>
+        <main>
+            <form method="post" enctype="multipart/form-data" name="file">
+                <label for="fileUpload">
+                    Select File
+                    <input
+                        type="file"
+                        id="fileUpload"
+                        name="file"
+                        required
+                    />
+                </label>
+                <button type="submit" aria-busy="false" id="uploadButton">
+                    Upload File
+                </button>
+            </form>
+            <p id="warningText" hidden>Hello World</p>
+            <progress id="progressBar" label="loading" hidden></progress>
+        </main>
+        <footer>
+            <h5>Acknowledgments</h5>
+            <ul>
+                <li>
+                    Frontend designed by Anna Grigorescu and Nicholas Synovic
+                </li>
+                <li>
+                    File format designed by Roshni Mathew and Nicholas Synovic
+                </li>
+                <li>
+                    Cluster architecture designed by Rohan Sethi and Nicholas
+                    Synovic
+                </li>
+                <li>
+                    <a
+                        href="https://www.flaticon.com/free-icons/thor"
+                        title="thor icons"
+                        >Thor icons created by Smashicons - Flaticon</a
+                    >
+                </li>
+            </ul>
+            <hr />
+        </footer>
+    </body>
+</html>
