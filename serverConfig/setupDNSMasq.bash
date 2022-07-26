@@ -2,6 +2,7 @@
 
 # https://www.howtoforge.com/how-to-setup-local-dns-server-using-dnsmasq-on-ubuntu-20-04/
 # https://www.linuxuprising.com/2020/07/ubuntu-how-to-free-up-port-53-used-by.html
+# https://wiki.debian.org/dnsmasq
 
 # Network interface to use for subnet; found by running ifconfig
 interface=""
@@ -33,8 +34,7 @@ multi on""" | sudo tee /etc/host.conf
 
 echo """interface=${interface}
 listen-address=192.168.102.1
-# set static ip addresses: dhcp-range=192.168.102.220,static,infinite
-dhcp-range=192.168.102.220,infinite
+dhcp-range=192.168.102.2,192.168.102.220,infinite
 dhcp-option=3,192.168.102.1
 dhcp-option=6,1.1.1.1
 dhcp-option=28,192.168.102.255
