@@ -22,8 +22,8 @@ sudo chown nobody:nogroup $folder
 sudo chmod 777 $folder
 
 # Add IP addresses for devices that can connect to the HEAD node
-# Add this "/mnt/nfsdir subnetIP/24(rw,sync,no_subtree_check)"
-sudo nano /etc/exports
+sudo cp /etc/exports /etc/exports.backup
+echo "/mnt/nfsdir ${subnetIP}/24(rw,sync,no_subtree_check)" | sudo tee /etc/exports
 
 # Export file system
 sudo exportfs -a
