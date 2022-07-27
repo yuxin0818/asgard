@@ -3,20 +3,18 @@
 # Tutorials followed
 # https://phoenixnap.com/kb/ubuntu-nfs-server
 
-# Variables
-serverIP=""
+serverIP=$1
 serverFolderPath="/mnt/asgard"
-clientFolderPath="/mnt/asgard_client"
+clientFolderPath="/mnt/asgard"
 
-# Update, Upgrade, and Autoremove
+sudo apt remove nfs-common --purge -y
+
 sudo apt update
 sudo apt upgrade -y
 sudo apt autoremove --purge -y
 
-# Install software
-sudo apt install nfs-common
+sudo apt install nfs-common -y
 
-# Setup mount point
 sudo rm -r $clientFolderPath
 sudo mkdir $clientFolderPath
 
