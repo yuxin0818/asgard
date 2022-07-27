@@ -7,7 +7,6 @@
 # Network interface to use for subnet; found by running ifconfig
 
 interface=$1
-
 nameserver="1.1.1.1"
 
 sudo apt remove dnsmasq dnsutils ldnsutils --purge -y
@@ -20,6 +19,7 @@ sudo systemctl disable --now systemd-resolved
 
 sudo apt-get install dnsmasq dnsutils ldnsutils -y
 
+# Configure dnsmasq
 sudo cp /etc/resolv.conf /etc/resolv.conf.backup
 sudo cp /etc/host.conf /etc/host.conf.backup
 sudo cp /etc/dnsmasq.conf /etc/dnsmasq.conf.backup
@@ -39,6 +39,9 @@ dhcp-option=option:dns-server,192.168.102.1
 
 log-queries
 log-dhcp""" | sudo tee /etc/dnsmasq.conf
+
+# Set subnet IP address of network interface
+sudo ifconfig $interface "192.168.102.1"
 
 sudo systemctl restart dnsmasq
 sudo systemctl status dnsmasq
