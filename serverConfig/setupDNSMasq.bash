@@ -30,6 +30,7 @@ echo """order hosts,bind
 multi on""" | sudo tee /etc/host.conf
 
 echo """interface=${interface}
+port=53
 
 dhcp-range=192.168.102.0,192.168.102.255,infinite
 
@@ -42,6 +43,9 @@ log-dhcp""" | sudo tee /etc/dnsmasq.conf
 
 # Set subnet IP address of network interface
 sudo ifconfig $interface "192.168.102.1"
+
+# Allow any connection through UFW on subnet
+sudo ufw allow from "192.168.102.0/24" to any port 53
 
 sudo systemctl restart dnsmasq
 sudo systemctl status dnsmasq
