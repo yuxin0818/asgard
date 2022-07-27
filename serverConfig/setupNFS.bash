@@ -5,25 +5,25 @@
 
 # Variables
 folderPath="/mnt/asgard"
-subnetIP=""
+subnetIP=$1
 
 # Update, Upgrade and Autoremove software
 sudo apt update
 sudo apt upgrade -y
-sudo apt autoremove --purege -y
+sudo apt autoremove --purge -y
 
 # Install software
 sudo apt install nfs-kernel-server -y
 
 # Setup shared folder
-sudo rm -r $folder
-sudo mkdir $folder
-sudo chown nobody:nogroup $folder
-sudo chmod 777 $folder
+sudo rm -r $folderPath
+sudo mkdir $folderPath
+sudo chown nobody:nogroup $folderPath
+sudo chmod 777 $folderPath
 
 # Add IP addresses for devices that can connect to the HEAD node
-sudo cp /etc/exports /etc/exports.backup
-echo "/mnt/nfsdir ${subnetIP}/24(rw,sync,no_subtree_check)" | sudo tee /etc/exports
+sudo cp /etc/exports /etc/exports.backup2
+echo "${folderPath} ${subnetIP}/24(rw,sync,no_subtree_check)" | sudo tee /etc/exports
 
 # Export file system
 sudo exportfs -a
