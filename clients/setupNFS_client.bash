@@ -5,7 +5,7 @@
 
 serverIP=$1
 serverFolderPath="/mnt/asgard"
-clientFolderPath="/mnt/asgard"
+clientFolderPath="/mnt/asgard_client"
 
 sudo apt remove nfs-common --purge -y
 
@@ -19,4 +19,6 @@ sudo rm -r $clientFolderPath
 sudo mkdir $clientFolderPath
 
 # Connect to NFS server at mount point
-sudo mount $serverIP:$serverFolderPath $clientFolderPath 
+# sudo mount $serverIP:$serverFolderPath $clientFolderPath
+sudo tee -a "${serverIP}:${serverFolderPath}	${clientFolderPath}	nfs	auto	0 0" /etc/fstab
+sudo mount -a
