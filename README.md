@@ -1,48 +1,63 @@
-# Asgard
+# Asgard<a name="asgard"></a>
 
-> Code to support the Asgard low powered computer vision cluster at Loyola University Chicago
+> A low powered computer vision cluster at [Loyola University Chicago](https://cs.luc.edu)
 
-## Table of Contents
+<!-- mdformat-toc start --slug=github --maxlevel=6 --minlevel=1 -->
 
--   [Asgard](#asgard)
-    -   [Table of Contents](#table-of-contents)
-    -   [About](#about)
-    -   [Setup](#setup)
-    -   [Frontend](#frontend)
-    -   [Backend](#backend)
-    -   [Intra-Node Communication](#intra-node-communication)
-    -   [Architecture Diagrams](#architecture-diagrams)
+- [Asgard](#asgard)
+  - [About](#about)
+  - [Server Frontend](#server-frontend)
+  - [Server Backend](#server-backend)
+  - [Node (Client) Setup](#node-client-setup)
+  - [Repository Tooling](#repository-tooling)
 
-## About
+<!-- mdformat-toc end -->
 
-Asgard is a _simple_ cluster of NVIDIA Jetson Nano 2GB devices that aims to provide a test bed for running and testing Computer Vision models for low powered computing devices.
+## About<a name="about"></a>
 
-This repository contains all of the information regarding:
+Asgard is (currently) a cluster of [NVIDIA Jetson Nano 2GB](<>) tasked with completing
+low powered computer vision tasks.
 
--   Setting up a NVIDIA Jetson 2GB for this project
--   The frontend web interface for uploading jobs (`.img` files) to the head node of the cluster
--   The backend server code to handle file transmission and storage
--   Scripts to send files from the head node to a node
--   Architecture diagrams to explain how this cluster is organized
--   File format documentation to explain what is an isn't a valid file format
+As Asgard is meant for low powered tasks, nodes on the network **do not** pool
+resources together at this time.
 
-## Setup
+This repository contains all of the code to setup the server backend and frontend,
+and nodes.
 
-See [JETSON_SETUP.md](JETSON_SETUP.md) for more information.
+This repository **does not** contain the image that is flashed to the nodes.
+Rather, as we expect to be expanding this cluster with a number of different
+devices in the future, we provide an installer to install all of the software to
+a node.
+In the future, we *may* publised images of the OS that is installed on the nodes.
 
-## Frontend
+## Server Frontend<a name="server-frontend"></a>
 
-Frontend code can be found [here](app/).
+All code for the frontend can be found in [`app`](app).
 
-The frontend website is written in a single HTML, CSS, and JS file.
-It uses [Pico.css](https://picocss.com/) as its CSS framework to simplify development.
+The frontend HTML is written in standard HTML, CSS, and JS with [PicoCSS](<>) for
+styling.
 
-## Backend
+The frontend web server is built using Python and Flask.
 
-The server backend for the website is handled via [Flask](https://flask.palletsprojects.com/en/2.1.x/) and Python 3.10+.
+## Server Backend<a name="server-backend"></a>
 
-Backend code can be found [here](app/server.py).
+All code for the server backend can be found in [`server`](server).
 
-## Intra-Node Communication
+The backend is consists of a subnet using [`dnsmasq`](<>), [`nfs`](<>), and [`avahi`](<>).
+[`ssh`](<>) is included for managing the server remotely.
 
-## Architecture Diagrams
+The server hardware and software requirements, as well as the installation instructions
+are in [`backend/README.md`](server/README.md).
+We also provide a reference network implmentation diagram in the instructions.
+
+## Node (Client) Setup<a name="node-client-setup"></a>
+
+All code for the nodes can be found in [`clients`](clients).
+
+The node hardware and software requirements, as well as the installation instructions
+are in [`clients/README.md`](clients/README.md).
+
+## Repository Tooling<a name="repository-tooling"></a>
+
+This repository utilizes [`poetry`](<>) for managing and building Python packages
+and [`pre-commit`](<>) for code formatting.
