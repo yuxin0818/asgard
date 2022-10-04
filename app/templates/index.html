@@ -15,6 +15,7 @@
             rel="stylesheet"
             href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"
         />
+        <script src="../static/modal.js" defer></script>
         <script src="../static/script.js" defer></script>
     </head>
 
@@ -25,10 +26,10 @@
             <p>Upload and submit your file here!</p>
             <div class="grid">
                 <div>
-                    <button type="button" id="aboutButton">About</button>
+                    <button type="button" id="aboutButton" data-target="aboutModal" onClick="toggleModal(event)">About</button>
                 </div>
                 <div>
-                    <button type="button" id="fileInformationButton">
+                    <button type="button" id="fileInformationButton" data-target="fileSpecificationModal" onClick="toggleModal(event)">
                         File Specification
                     </button>
                 </div>
@@ -76,5 +77,46 @@
             </ul>
             <hr />
         </footer>
+        <dialog id="aboutModal">
+            <article>
+                <a href="#close" aria-label="Close" class="close"
+                    data-target="aboutModal" onClick="toggleModal(event)">
+                </a>
+                <h3>Asgard</h3>
+                <p>
+                    Asgard is a low powerd computer cluster at Loyola University Chicago.
+                </p>
+                <p>
+                    It is powered by (currently) six NVIDIA Jetson Nano 2GBs.
+                </p>
+                <p>
+                    The purpose of this cluster is to test computer vision code targetting low
+                    powered computer devices.
+                </p>
+                <p>
+                    It is meant to be utilized for testing in the Low Powered Computer Vision
+                    challenge.
+                </p>
+                <p>
+                    The source code for the website, head node, and client node is availible on
+                    <a target="_blank"
+                        href="https://github.com/SoftwareSystemsLaboratory/asgard">GitHub</a>.
+                </p>
+            </article>
+        </dialog>
+        <dialog id="fileSpecificationModal">
+            <article>
+                <a href="#close" aria-label="Close" class="close"
+                    data-target="fileSpecificationModal" onClick="toggleModal(event)">
+                </a>
+                <h3>File Upload Specifications</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+                    repellat quis id cum quo sunt debitis, iure quod, consequuntur
+                    repudiandae neque asperiores et molestias, error vitae
+                    exercitationem saepe dolore sapiente.
+                </p>
+            </article>
+        </dialog>
     </body>
 </html>
