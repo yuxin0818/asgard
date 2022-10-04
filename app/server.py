@@ -39,6 +39,22 @@ def createApp():
                     flash("File Upload Failed. See File Specification for more information.")
         return render_template("index.html")
 
+    @app.route("/status.html", methods=["GET", "POST"])
+    def status():
+        return render_template("status.html")
+
+    @app.route("/reports.html", methods=["GET", "POST"])
+    def reports():
+        return render_template("reports.html")
+
+    @app.route("/signin.html", methods=["GET", "POST"])
+    def signIn():
+        return render_template("signin.html")
+
+    @app.route("/signout.html", methods=["GET", "POST"])
+    def signOut():
+        return render_template("signout.html")
+
     return app
 
 
