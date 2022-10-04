@@ -1,13 +1,12 @@
 import os
-
-count = 0
+from time import time
 
 from flask import (Flask, Response, flash, redirect, render_template, request,
                    url_for)
 from werkzeug.utils import secure_filename
 
+count = 0
 UPLOAD_FOLDER = "uploads"
-
 
 def createApp():
     app = Flask(__name__)
@@ -30,7 +29,7 @@ def createApp():
                 flash("No selected file")
                 return redirect(request.url)
             if file:
-                filename = secure_filename(file.filename)
+                filename = secure_filename(f"{time()}_{file.filename}")
                 file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
                 flash("File Uploaded Successfully")
         return render_template("index.html")
