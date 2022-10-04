@@ -1,4 +1,5 @@
 import os
+from pathlib import PurePath
 from time import time
 
 from flask import (Flask, Response, flash, redirect, render_template, request,
@@ -29,9 +30,13 @@ def createApp():
                 flash("No selected file")
                 return redirect(request.url)
             if file:
-                filename = secure_filename(f"{time()}_{file.filename}")
-                file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
-                flash("File Uploaded Successfully")
+                filename: str = secure_filename(f"{time()}_{file.filename}")
+
+                if PurePath(filename).suffix == ".zip":
+                    file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
+                    flash("File Uploaded Successfully")
+                else:
+                    flash("File Upload Failed. See File Specification for more information.")
         return render_template("index.html")
 
     return app
