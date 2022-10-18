@@ -50,10 +50,16 @@ def createApp():
     @app.route("/signin.html", methods=["GET", "POST"])
     def signIn():
         return render_template("signin.html")
+    
+    @app.route("/signup.html", methods=["GET", "POST"])
+    def signUp():
+        return render_template("signup.html")
 
     @app.route("/signout.html", methods=["GET", "POST"])
     def signOut():
         return render_template("signout.html")
+    
+
 
     return app
 
